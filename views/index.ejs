@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Socket.IO chat</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/app.css">
 </head>
 <body>
-    <ul id="messages"></ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10">
+                <ul id="messages"></ul>
+            </div>
+            <div class="col-xs-2">
+                <ul id="users">
+                    <li class="text-center"><strong>Users</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <form action="">
         <input id="m" autocomplete="off" placeholder="Enter Username"/><button>Send</button>
     </form>

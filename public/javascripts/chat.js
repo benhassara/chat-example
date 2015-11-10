@@ -10,6 +10,7 @@ $(function() {
             user = input.val();
             socket.emit('new user', input.val());
             input.attr('placeholder', 'Enter message.');
+            $('#users').append($('<li>').html(input.val()));
         }
         else {
             socket.emit('chat message', {
