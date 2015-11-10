@@ -15,7 +15,13 @@ server.listen(3000, function() {
 });
 
 io.on('connection', function(socket) {
+    socket.on('new user', function(userName) {
+        console.log(userName);
+        io.emit('new user', userName + ' has joined the chat.');
+    });
+
     socket.on('chat message', function(msg) {
-        io.emit('chat message', msg);
+        var output = msg.user + ': ' + msg.text;
+        io.emit('chat message', output);
     });
 });
