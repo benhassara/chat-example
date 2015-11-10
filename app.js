@@ -15,5 +15,7 @@ server.listen(3000, function() {
 });
 
 io.on('connection', function(socket) {
-    console.log('someone entered the chat room!');
+    socket.on('chat message', function(msg) {
+        io.emit('chat message', msg);
+    });
 });
